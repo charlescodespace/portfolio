@@ -1,0 +1,525 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Charles S digital showcase featuring projects, skills, certifications, and engineering work.">
+    <meta name="theme-color" content="#0d0f12">
+    <link rel="icon" type="image/png" href="assests/CHARL.png">
+    <title>Charles S | Professional Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Load GSAP (UMD) for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Load three.js as an ES module and expose it as window.THREE for existing scripts -->
+    <script type="module">
+        import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+        window.THREE = THREE;
+    </script>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav>
+        <div class="logo">
+            <img src="assests/CHARL.png" alt="Charles S">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero"><span>Home</span></a></li>
+            <li><a href="#projects"><span>Projects</span></a></li>
+            <li><a href="#skills"><span>Skills</span></a></li>
+            <li><a href="#certificates"><span>Certificates</span></a></li>
+            <li><a href="#education"><span>Education</span></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="hero" class="reveal">
+            <div class="hero-content">
+                <div class="hero-status-pill reveal-item">
+                    <span class="status-dot"></span>
+                    Professional digital showcase
+                </div>
+                <div class="hero-image-container">
+                    <div class="glow-ring"></div>
+                    <img src="assests/charles_photo.jpg" class="hero-avatar" alt="Portrait of Charles S">
+                </div>
+                <span class="greeting">Hi, I am</span>
+                <h1>CHARLES S</h1>
+                <p class="tagline">Software Full-Stack Developer | Building modern web platforms and scalable products</p>
+                <div class="hero-bio reveal-item">
+                    <p>
+                        I am a software full-stack developer creating modern, scalable web applications from front-end experiences to back-end systems.
+                        I combine clean design, efficient architecture, and reliable development to turn ideas into products people use every day.
+                    </p>
+                </div>
+
+                <div class="hero-network-grid reveal-item">
+                    <div class="network-panel topology-panel">
+                        <div class="panel-heading">
+                            <span class="panel-kicker">Interactive Canvas</span>
+                            <h3>Spatial product showcase</h3>
+                        </div>
+                        <div class="topology-canvas-wrap">
+                            <canvas id="network-hero"></canvas>
+                        </div>
+                    </div>
+                    <div class="network-panel signal-panel">
+                        <div class="panel-heading">
+                            <span class="panel-kicker">Profile Snapshot</span>
+                            <h3>Focused capabilities</h3>
+                        </div>
+                        <div class="signal-list">
+                            <div class="signal-row">
+                                <span class="signal-label">Execution style</span>
+                                <span class="signal-value">Structured</span>
+                            </div>
+                            <div class="signal-row">
+                                <span class="signal-label">Problem solving</span>
+                                <span class="signal-value">Strategic</span>
+                            </div>
+                            <div class="signal-row">
+                                <span class="signal-label">Delivery focus</span>
+                                <span class="signal-value">Reliable</span>
+                            </div>
+                            <div class="signal-row">
+                                <span class="signal-label">Design language</span>
+                                <span class="signal-value">Premium</span>
+                            </div>
+                        </div>
+                        <div class="signal-mesh">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-console reveal-item">
+                    <div class="console-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="console-title">charles-terminal</span>
+                    </div>
+                    <div class="console-body" id="console-output">
+                        <div class="line">system.online</div>
+                        <div class="line">$ launching environment</div>
+                        <div class="line">&gt; init_sequence...</div>
+                        <div class="line">[ status ]     stable</div>
+                        <div class="line">[ control ]    absolute</div>
+                        <div class="line">[ focus  ]     architecting intelligent systems</div>
+                        <div class="line">[ process]     break -&gt; rebuild -&gt; optimize</div>
+                        <div class="line">[ mode   ]     simplify -&gt; scale -&gt; automate</div>
+                        <div class="line">&gt; chaos detected</div>
+                        <div class="line">&gt; chaos optimized</div>
+                        <div class="line">&gt; ready.</div>
+                        <div class="cursor-line">$ <span id="typewriter"></span><span class="blink">_</span></div>
+                    </div>
+                </div>
+
+                <div class="hero-stats reveal-item">
+                    <div class="stat-item">
+                        <span class="stat-num">5+</span>
+                        <span class="stat-lbl">Tech Stacks</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">PRO</span>
+                        <span class="stat-lbl">Developer</span>
+                    </div>
+                </div>
+
+                <div class="contact-chips reveal-item">
+                    <a href="tel:+918971684901" class="chip">Call: +91-8971684901</a>
+                    <a href="mailto:charlespinto204@gmail.com" class="chip">Email</a>
+                    <a href="https://github.com/charlescodespace" target="_blank" rel="noreferrer" class="chip">GitHub</a>
+                    <a href="https://www.linkedin.com/in/charles-pinto/" target="_blank" rel="noreferrer" class="chip">LinkedIn</a>
+                    <a href="../resume.docx" download class="chip resume-btn">Download Resume</a>
+                </div>
+
+                <div class="hero-actions reveal-item">
+                    <a href="#projects" class="hero-cta hero-cta-primary">Explore Projects</a>
+                    <a href="#certificates" class="hero-cta hero-cta-secondary">View Certifications</a>
+                </div>
+
+                <div class="hero-insight-grid reveal-item">
+                    <div class="hero-insight-card">
+                        <span class="hero-insight-kicker">Build Style</span>
+                        <h4>Elegant systems with practical execution</h4>
+                        <p>Clean interfaces, dependable engineering, and strong delivery discipline.</p>
+                    </div>
+                    <div class="hero-insight-card">
+                        <span class="hero-insight-kicker">What I Bring</span>
+                        <h4>Engineering plus product thinking</h4>
+                        <p>I focus on solutions that look refined, work reliably, and scale well.</p>
+                    </div>
+                    <div class="hero-insight-card">
+                        <span class="hero-insight-kicker">Current Direction</span>
+                        <h4>Premium digital experiences</h4>
+                        <p>Building polished systems that feel intentional, modern, and complete.</p>
+                    </div>
+                </div>
+
+                <div class="hero-mission reveal-item">
+                    <h5>Current Focus</h5>
+                    <p>Designing refined digital experiences and building dependable systems that feel modern, clear, and intentional.</p>
+                </div>
+
+                <div class="tech-ribbon reveal-item">
+                    <div class="ribbon-track">
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS"><span>AWS</span></div>
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+                        <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span></span>
+            </div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-grid">
+                <article class="project-card reveal-item">
+                    <div class="project-orbit">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="project-image">
+                        <img src="assests/whitefield_fc.png" alt="Whitefield FC project preview" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tag">Full Stack Development</div>
+                        <h3>Whitefield FC Football Academy Attendance Tracker</h3>
+                        <p class="location">Whitefield FC, Bangalore</p>
+
+                        <div class="description-block">
+                            <h4>Description</h4>
+                            <p>Built a full-stack attendance management system for Whitefield FC Football Academy, replacing manual attendance registers with a secure and centralized digital platform.</p>
+                            <p>The application enables coaches to manage players, schedule training sessions, mark attendance, upload session photos, and monitor academy activities through an intuitive dashboard.</p>
+                            <p>Designed using modern web technologies with secure authentication, REST APIs, and PostgreSQL to deliver a scalable, responsive, and efficient solution for academy operations.</p>
+                        </div>
+
+                        <div class="description-block">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Secure JWT authentication for coaches</li>
+                                <li>Player, session, and attendance management</li>
+                                <li>Attendance photo upload functionality</li>
+                                <li>Dashboard with reports and statistics</li>
+                                <li>Responsive UI with modern user experience</li>
+                            </ul>
+                        </div>
+
+                        <div class="description-block">
+                            <h4>Tech Stack</h4>
+                            <ul>
+                                <li><strong>Next.js</strong> - Frontend framework</li>
+                                <li><strong>NestJS</strong> - Backend REST APIs</li>
+                                <li><strong>PostgreSQL &amp; Prisma</strong> - Database management</li>
+                                <li><strong>Tailwind CSS</strong> - Responsive user interface</li>
+                                <li><strong>JWT &amp; Multer</strong> - Authentication and file uploads</li>
+                            </ul>
+                        </div>
+
+                        <div class="description-block">
+                            <h4>Impact</h4>
+                            <ul>
+                                <li>Eliminates manual attendance tracking</li>
+                                <li>Improves academy management efficiency</li>
+                                <li>Provides real-time attendance insights and reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div id="more-projects" class="project-grid more-projects">
+                <article class="project-card reveal-item">
+                    <div class="project-orbit">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="project-image">
+                        <img src="assests/ipsec_project.jpg" alt="IPsec automation system preview" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tag">Security - Networking</div>
+                        <h3>Full Stack IPsec Automation System</h3>
+                        <p class="location">REVA University, Bangalore</p>
+                        <div class="description-block">
+                            <h4>Description</h4>
+                            <p>Built a centralized IPsec automation system to simplify VPN configuration and management.</p>
+                            <p>The system automates the creation and deployment of secure tunnels across distributed nodes, reducing manual effort and improving network reliability.</p>
+                        </div>
+                        <div class="description-block">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Automated IPsec tunnel configuration</li>
+                                <li>Centralized control and monitoring</li>
+                                <li>Secure communication using strongSwan</li>
+                                <li>Real-time VPN status tracking</li>
+                                <li>Role-based access control</li>
+                            </ul>
+                        </div>
+                        <div class="description-block">
+                            <h4>Tech Stack</h4>
+                            <ul>
+                                <li><strong>FastAPI</strong> - Backend orchestration</li>
+                                <li><strong>React.js</strong> - Frontend dashboard</li>
+                                <li><strong>strongSwan</strong> - IPsec VPN implementation</li>
+                                <li><strong>Linux</strong> - System environment</li>
+                                <li><strong>JSON / REST APIs</strong> - Communication layer</li>
+                            </ul>
+                        </div>
+                        <div class="description-block">
+                            <h4>Impact</h4>
+                            <ul>
+                                <li>Reduced manual VPN setup errors</li>
+                                <li>Improved network security and reliability</li>
+                                <li>Enabled scalable automated infrastructure</li>
+                                <li>Simplified complex networking workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal-item">
+                    <div class="project-orbit">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="project-image">
+                        <img src="assests/job_portal.png" alt="Job portal preview" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tag">Web App - MERN Stack</div>
+                        <h3>Full Stack Job Portal System</h3>
+                        <p class="location">Personal Project</p>
+                        <div class="description-block">
+                            <h4>Description</h4>
+                            <p>Developed a full-stack job portal platform that connects job seekers and recruiters.</p>
+                            <p>The system enables users to register, browse jobs, apply for positions, and manage applications, while employers can post jobs and track applicants in real time.</p>
+                        </div>
+                        <div class="description-block">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>User authentication with JWT</li>
+                                <li>Job posting and application system</li>
+                                <li>Search and filter support</li>
+                                <li>Admin dashboard for management</li>
+                                <li>Responsive UI across devices</li>
+                            </ul>
+                        </div>
+                        <div class="description-block">
+                            <h4>Tech Stack</h4>
+                            <ul>
+                                <li><strong>MongoDB</strong> - Database</li>
+                                <li><strong>Express.js</strong> - Backend framework</li>
+                                <li><strong>React.js</strong> - Frontend UI</li>
+                                <li><strong>Node.js</strong> - Server-side runtime</li>
+                                <li><strong>JWT</strong> - Authentication</li>
+                            </ul>
+                        </div>
+                        <div class="description-block">
+                            <h4>Impact</h4>
+                            <ul>
+                                <li>Streamlines recruitment workflows</li>
+                                <li>Improves job accessibility</li>
+                                <li>Reduces manual hiring effort</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal-item">
+                    <div class="project-orbit">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="project-image">
+                        <img src="assests/blood_donation.jpg" alt="Blood banking project preview" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tag">HealthTech - Global System</div>
+                        <h3>Blood Banking &amp; Delivery System</h3>
+                        <p class="location">International Project</p>
+                        <div class="description-block">
+                            <h4>Description</h4>
+                            <p>Designed a secure blood banking and delivery platform that connects hospitals, donors, and recipients.</p>
+                            <p>The system ensures that blood units are tested, verified, and safely delivered across locations, reducing delays and improving emergency response.</p>
+                        </div>
+                        <div class="description-block">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Hospital and user verification system</li>
+                                <li>Blood testing and quality assurance tracking</li>
+                                <li>Real-time blood availability monitoring</li>
+                                <li>Secure ordering and delivery system</li>
+                                <li>Global accessibility for urgent needs</li>
+                            </ul>
+                        </div>
+                        <div class="description-block">
+                            <h4>Tech Stack</h4>
+                            <ul>
+                                <li><strong>PHP / Node.js</strong> - Backend processing</li>
+                                <li><strong>MySQL / MongoDB</strong> - Database</li>
+                                <li><strong>HTML, CSS, JavaScript</strong> - Frontend</li>
+                                <li><strong>XAMPP</strong> - Local server environment</li>
+                            </ul>
+                        </div>
+                        <div class="description-block">
+                            <h4>Impact</h4>
+                            <ul>
+                                <li>Reduces mortality due to blood shortage</li>
+                                <li>Ensures safe and verified blood delivery</li>
+                                <li>Improves healthcare response efficiency</li>
+                                <li>Builds trust between hospitals and patients</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal">
+            <h2 class="section-title">Expertise</h2>
+            <div class="skills-bento-grid">
+                <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+                <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                    <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"><span>CSS</span></div>
+                    <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"><span>HTML</span></div>
+                <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React.js</span></div>
+                <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask"><span>Flask</span></div>
+                <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+                <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS"><span>AWS</span></div>
+                <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+                <div class="skill-tile reveal-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
+            </div>
+            <div class="foundations-grid">
+                <div class="foundation-card reveal-item"><div class="f-icon">DSA</div><h4>DSA</h4><p>Advanced Algorithms &amp; Data Structures</p></div>
+                <div class="foundation-card reveal-item"><div class="f-icon">DB</div><h4>DBMS</h4><p>Relational Data Modeling &amp; Optimization</p></div>
+                <div class="foundation-card reveal-item"><div class="f-icon">NET</div><h4>Networks</h4><p>IPsec, TCP/IP &amp; Network Security</p></div>
+                <div class="foundation-card reveal-item"><div class="f-icon">SYS</div><h4>System</h4><p>Operating Systems &amp; Architecture</p></div>
+            </div>
+            <div class="coursework-box reveal-item">
+                <h3>Core Strengths</h3>
+                <p>System design, backend engineering, frontend polish, automation workflows, and practical problem solving through real implementations.</p>
+            </div>
+        </section>
+
+        <section id="certificates" class="reveal">
+            <h2 class="section-title">Achievements &amp; Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card reveal-item"><div class="cert-badge">AI</div><div class="cert-info"><h3>AI Foundations</h3><p>IBM Professional Certification</p></div></div>
+                <div class="cert-card reveal-item"><div class="cert-badge">DT</div><div class="cert-info"><h3>Enterprise Design Thinking</h3><p>IBM Practitioner Certification</p></div></div>
+                <div class="cert-card reveal-item"><div class="cert-badge">DS</div><div class="cert-info"><h3>Enterprise Data Science</h3><p>IBM Training Certification</p></div></div>
+                <div class="cert-card reveal-item"><div class="cert-badge">DEV</div><div class="cert-info"><h3>Advanced Alpha Programming</h3><p>Grade A+ in C, C++, Java &amp; Python - CADD NEST</p></div></div>
+                <div class="cert-card reveal-item"><div class="cert-badge">PY</div><div class="cert-info"><h3>Python Skill Dev</h3><p>Infotech Solutions &amp; REVA University</p></div></div>
+                <div class="cert-card reveal-item"><div class="cert-badge">C</div><div class="cert-info"><h3>C Programming Master</h3><p>TrendingSkills, REVA University</p></div></div>
+                <div class="cert-card reveal-item"><div class="cert-badge">AWD</div><div class="cert-info"><h3>Abhinandan 2025</h3><p>Token of Appreciation - REVA CDC</p></div></div>
+                <div class="cert-card reveal-item"><div class="cert-badge">SC</div><div class="cert-info"><h3>Student Council Member</h3><p>Media Head 2025-26 - REVA University</p></div></div>
+                <div class="cert-card reveal-item"><div class="cert-badge">AI</div><div class="cert-info"><h3>Enterprise-grade AI</h3><p>Getting Started - IBM Certification</p></div></div>
+                <div class="cert-card reveal-item"><div class="cert-badge">INT</div><div class="cert-info"><h3>Artificial Intelligence</h3><p>Skill Intern (Ministry of Education recognized)</p></div></div>
+            </div>
+        </section>
+
+        <section id="education" class="reveal">
+            <h2 class="section-title">Education</h2>
+            <div class="edu-card reveal-item">
+                <div class="edu-main">
+                    <h3>Reva University, Bangalore</h3>
+                    <span class="edu-date">2023 - 2027</span>
+                </div>
+                <p class="edu-degree">B.Tech, Computer Science Engineering</p>
+                <div class="edu-stats">
+                </div>
+            </div>
+            <div class="coursework-box reveal-item">
+                <h3>Relevant Coursework</h3>
+                <p>Data Structures &amp; Algorithms, Operating Systems, Computer Networks, DBMS, Software Engineering, and practical cloud-native development workflows.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="skill-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" type="button">&times;</button>
+            <div class="modal-header">
+                <img id="modal-icon" src="" alt="">
+                <h3 id="modal-title"></h3>
+            </div>
+            <div class="modal-body">
+                <p id="modal-description"></p>
+                <div class="modal-tags" id="modal-usage"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content project-modal-content">
+            <button class="modal-close project-modal-close" type="button">&times;</button>
+            <div class="project-modal-media">
+                <img id="project-modal-image" src="" alt="">
+            </div>
+            <div class="project-modal-copy">
+                <div class="project-modal-meta">
+                    <span id="project-modal-tag" class="skill-tag"></span>
+                    <span id="project-modal-location" class="project-modal-location"></span>
+                </div>
+                <h3 id="project-modal-title"></h3>
+                <div id="project-modal-summary" class="project-modal-summary"></div>
+                <div class="project-modal-section">
+                    <h4>Key Features</h4>
+                    <ul id="project-modal-features" class="project-modal-list"></ul>
+                </div>
+                <div class="project-modal-section">
+                    <h4>Tech Stack</h4>
+                    <div id="project-modal-stack" class="modal-tags"></div>
+                </div>
+                <div class="project-modal-section">
+                    <h4>Outcome</h4>
+                    <ul id="project-modal-impact" class="project-modal-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-shell">
+            <div>
+                <p class="footer-brand">CHARLES S</p>
+                <p class="footer-copy">Thoughtful engineering, refined interface design, and polished execution across every build.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#education">Education</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
