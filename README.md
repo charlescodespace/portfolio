@@ -57,7 +57,7 @@ Deployment suggestions
 - Static hosts like GitHub Pages, Netlify, or Vercel work well. Deploy the repository root or the `portfolio/` subfolder as a static site.
 
 Contact
-- Email: charlespinto204@gmail.com
+- Email: charlespinto2004@sgmail.com
 - GitHub: https://github.com/charlescodespace
 - LinkedIn: https://www.linkedin.com/in/charles-pinto/
 
