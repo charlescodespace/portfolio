@@ -1,0 +1,126 @@
+<svg width="1600" height="420" viewBox="0 0 1600 420" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity=".75"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity=".45"/>
+    </linearGradient>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="18"
+        flood-color="#60A5FA" flood-opacity=".18"/>
+    </filter>
+
+    <radialGradient id="glow1">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glow2">
+      <stop offset="0%" stop-color="#818CF8" stop-opacity=".15"/>
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0"/>
+    </radialGradient>
+
+  </defs>
+
+  <rect width="1600" height="420" fill="url(#bg)"/>
+
+  <circle cx="1480" cy="30" r="220" fill="url(#glow1)"/>
+  <circle cx="120" cy="390" r="220" fill="url(#glow2)"/>
+
+  <rect x="210" y="28" width="1180" height="364" rx="24"
+        fill="url(#glass)" stroke="#334155" stroke-width="1.2"
+        filter="url(#shadow)"/>
+
+  <rect x="210" y="28" width="1180" height="46" rx="24" fill="#111827"/>
+
+  <circle cx="245" cy="51" r="6" fill="#FB7185"/>
+  <circle cx="267" cy="51" r="6" fill="#FBBF24"/>
+  <circle cx="289" cy="51" r="6" fill="#60A5FA"/>
+
+  <text x="800" y="56" text-anchor="middle"
+        fill="#94A3B8"
+        font-size="14"
+        font-family="JetBrains Mono, monospace">
+    terminal
+  </text>
+
+  <g fill="#E2E8F0"
+     font-family="JetBrains Mono, monospace"
+     font-size="18">
+
+    <text x="255" y="112">&gt; boot portfolio</text>
+    <text x="255" y="142">Initializing Portfolio OS...</text>
+    <text x="255" y="174">[████████████████████] 100%</text>
+
+    <text x="255" y="208">✓ Projects Loaded</text>
+    <text x="255" y="236">✓ Skills Loaded</text>
+    <text x="255" y="264">✓ Experience Loaded</text>
+    <text x="255" y="292">✓ Resume Linked</text>
+    <text x="255" y="320">✓ GitHub Connected</text>
+    <text x="255" y="348">✓ Portfolio Ready</text>
+
+  </g>
+
+  <line x1="850" y1="90" x2="850" y2="350"
+        stroke="#334155"/>
+
+  <text x="900" y="130"
+        fill="#F8FAFC"
+        font-size="34"
+        font-weight="700"
+        font-family="Inter, Arial">
+    Welcome to my
+  </text>
+
+  <text x="900" y="172"
+        fill="#93C5FD"
+        font-size="40"
+        font-weight="800"
+        font-family="Inter, Arial">
+    Digital Workspace
+  </text>
+
+  <text x="900" y="222"
+        fill="#E2E8F0"
+        font-size="23"
+        font-weight="600"
+        font-family="Inter, Arial">
+    Hi, I'm Charles S
+  </text>
+
+  <text x="900" y="255"
+        fill="#94A3B8"
+        font-size="18"
+        font-family="Inter, Arial">
+    Full Stack Software Developer
+  </text>
+
+  <text x="900" y="305"
+        fill="#CBD5E1"
+        font-size="17"
+        font-family="Inter, Arial">
+    Building scalable web applications,
+  </text>
+
+  <text x="900" y="330"
+        fill="#CBD5E1"
+        font-size="17"
+        font-family="Inter, Arial">
+    engineering robust backend systems,
+  </text>
+
+  <text x="900" y="355"
+        fill="#CBD5E1"
+        font-size="17"
+        font-family="Inter, Arial">
+    and creating exceptional digital experiences.
+  </text>
+
+</svg>
